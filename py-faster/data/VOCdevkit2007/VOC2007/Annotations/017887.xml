@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?><annotation>
+    <folder>VOC2007</folder>
+    <filename>017887.jpg</filename>
+    <source>
+        <database>My Database</database>
+        <annotation>VOC2007</annotation>
+        <image>flickr</image>
+        <flickrid>NULL</flickrid>
+    </source>
+    <owner>
+        <flickrid>NULL</flickrid>
+        <name>idaneel</name>
+    </owner>
+    <size>
+        <width>327</width>
+        <height>246</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <content>star</content>
+        <name>star</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>232</xmin>
+            <ymin>215</ymin>
+            <xmax>262</xmax>
+            <ymax>245</ymax>
+        </bndbox>
+    </object>
+</annotation>

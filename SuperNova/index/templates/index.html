@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>超新星检测</title>
+	<link rel="stylesheet" href="static/css/style.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="static/css/mobile.css">
+	<script src="static/js/mobile.js" type="text/javascript"></script>
+</head>
+<body>
+	<div id="page">
+		<div id="header">
+			<div>
+				<a href="{% url 'index' %}" class="logo"><img src="static/images/nwafunet3.png" alt=""></a>
+				<ul id="navigation">
+					<li class="selected">
+						<a href="{% url 'index' %}">网站首页</a>
+					</li>
+					<li>
+						<a href="{% url 'about' %}">星体检测</a>
+					</li>
+					<li>
+						<a href="{% url 'project' %}">模型实现</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="body" class="home">
+			<div class="header">
+				<div>
+					<img id="blackhole2019_2"src="static/images/blackhole2019_2.png" alt="" class="satellite">
+					<h1>超新星检测</h1>
+					<a href="{% url 'about' %}" class="more">在线检测</a>
+					<h3>超新星搜寻</h3>
+					<ul>
+						<li>
+							<a href="about.html"><img src="static/images/project-image1.jpg" alt=""></a>
+						</li>
+						<li>
+							<a href="about.html"><img src="static/images/project-image2.jpg" alt=""></a>
+						</li>
+						<li>
+							<a href="about.html"><img src="static/images/project-image3.jpg" alt=""></a>
+						</li>
+						<li>
+							<a href="about.html"><img src="static/images/project-image4.jpg" alt=""></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="copyrights">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>
+			<div class="body">
+				<div>
+					<h1>我们的服务</h1>
+					<p>我们提供超新星的在线检测服务，借助于基于深度卷积神经网络的Faster RCNN模型改进版本，星体的类别与位置将同时出现在输出结果中</p>
+				</div>
+			</div>
+			<div class="footer">
+				<div>
+					<ul>
+						<li>
+							<h1>团队信息</h1>
+							<ul>
+								<li>
+									<a href="https://www.nwsuaf.edu.cn/"><img src="static/images/xinong.png" alt=""></a>
+									<h1>西北农林科技大学</h1>
+									<span>B12组</span>
+									<span>组长：邱霁岩</span>
+									<span>组员：蒋心璐 林山淇</span>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<h1>项目相关</h1>
+							<ul>
+								<li>
+									<a href="http://www.ictedu.com/"><img src="static/images/taike.png" alt=""></a>
+									<h1>&emsp;&emsp;&emsp;华为人工智能实训</h1>
+									<span>&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;B12组</span>
+									<span>&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;项目名称：</span>
+									<span>&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;基于卷积神经网络的超新星目标检测</span>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		</div>
+	</div>
+<script>
+//图片动画封装
+function SearchAnim(opts) {
+    for(var i in SearchAnim.DEFAULTS) {
+      if (opts[i] === undefined) {
+        opts[i] = SearchAnim.DEFAULTS[i];
+      }
+    }
+    this.opts = opts;
+    this.timer = null;
+    this.elem = document.getElementById(opts.elemId);
+    this.startAnim();
+}
+SearchAnim.prototype.startAnim = function () {
+    this.stopAnim();
+    this.timer = setInterval(() => {
+      var startIndex = this.opts.startIndex;
+      if (startIndex == 360) {
+        this.opts.startIndex = 0;
+      }
+      this.elem.style.transform = "rotate("+ (startIndex) +"deg)";
+      this.opts.startIndex += 0.1;
+    }, this.opts.delay);
+    setTimeout(() => {
+      this.stopAnim();
+    }, this.opts.duration);
+}
+SearchAnim.prototype.stopAnim = function() {
+    if (this.timer != null) {
+      clearInterval(this.timer);
+    }
+}
+SearchAnim.DEFAULTS = {
+    duration : 99999999,
+    delay : 200,
+    direction : true,
+    startIndex : 0,
+    endIndex : 360
+}
+new SearchAnim({
+  elemId : "blackhole2019_2",
+  delay : 20,
+});
+</script>
+
+</body>
+</html>

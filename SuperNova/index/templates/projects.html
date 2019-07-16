@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>projects</title>
+	<link rel="stylesheet" href="static/css/style.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="static/css/mobile.css">
+	<link rel="stylesheet" href="static/jquery-lightbox-0.5/css/jquery.lightbox-0.5.css">
+	<script src="static/jquery-lightbox-0.5/js/jquery.js"></script>
+	<script src="static/jquery-lightbox-0.5/js/jquery.lightbox-0.5.js"></script>
+	<script src="static/jquery-lightbox-0.5/js/jquery.lightbox-0.5.min.js"></script>
+	<script src="static/js/mobile.js" type="text/javascript"></script>
+
+</head>
+<body>
+<div id="page">
+	<div id="page">
+		<div id="header">
+			<div>
+				<a href="{% url 'index' %}" class="logo"><img src="static/images/nwafunet3.png" alt=""></a>
+				<ul id="navigation">
+					<li>
+						<a href="{% url 'index' %}">网站首页</a>
+					</li>
+					<li>
+						<a href="{% url 'about' %}">星体检测</a>
+					</li>
+					<li class="selected">
+						<a href="{% url 'project' %}">模型实现</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="body">
+			<div class="header">
+				<div>
+					<h1>模型的实现</h1>
+					<p>首先对数据集图片进行降噪处理和通道合并。然后选用两种数据集。使用Faster R-CNN训练，调整anchor大小，最后通过类NMS的框融合机制得到最终结果。</p>
+					<ul id="gallery" class="gallery">
+						<li>
+							<a href="static/images/denoise2.png"><img src="static/images/denoise.png" alt=""></a>
+							<div>
+								<h1>关键技术阐述：图像降噪</h1>
+								<p>实验证明90%的降噪效果最好</p>
+							</div>
+						</li>
+						<li>
+							<a href="static/images/zengqiang2.png"><img src="static/images/zengqiang1.png" alt=""></a>
+							<div>
+								<h1>关键技术阐述：图像增强</h1>
+								<p></p>
+							</div>
+						</li>
+						<li>
+							<a href="static/images/combine2.png"><img src="static/images/combine.png" alt=""></a>
+							<div>
+								<h1>关键技术阐述：通道合并</h1>
+								<p></p>
+							</div>
+						</li>
+						<li>
+							<a href="static/images/anchor2.png"><img src="static/images/anchor.png" alt=""></a>
+							<div>
+								<h1>关键技术阐述：Anchor调整</h1>
+								<p>调整Anchor数量，使提取的区域建议更适合小目标的检测</p>
+							</div>
+						</li>
+						<li>
+							<a href="static/images/NMS2.png"><img src="static/images/NMS.png" alt=""></a>
+							<div>
+								<h1>关键技术阐述：类NMS融合</h1>
+								<p>使用类NMS方法删除重叠框，提高预测框的命中率</p>
+							</div>
+						</li>
+						<li>
+							<a href="static/images/targetpoint2.png"><img src="static/images/targetpoint.png" alt=""></a>
+							<div>
+								<h1>关键技术阐述：目标点简介</h1>
+								<p></p>
+							</div>
+						</li>
+						<li>
+							<a href="static/images/partition2.png"><img src="static/images/partition.png" alt=""></a>
+							<div>
+								<h1>关键技术阐述：数据划分</h1>
+								<p></p>
+							</div>
+						</li>
+						<li>
+							<a href="static/images/trainset2.png"><img src="static/images/trainset.png" alt=""></a>
+							<div>
+								<h1>关键技术阐述：训练样本集</h1>
+								<p></p>
+							</div>
+						</li>
+						<li>
+							<a href="static/images/model2.png"><img src="static/images/model.png" alt=""></a>
+							<div>
+								<h1>关键技术阐述：训练模型</h1>
+								<p></p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+$("#gallery a").lightBox({
+  imageLoading: 'static/jquery-lightbox-0.5/images/lightbox-ico-loading.gif',
+  imageBtnPrev: 'static/jquery-lightbox-0.5/images/lightbox-btn-prev.gif',
+  imageBtnNext: 'static/jquery-lightbox-0.5/images/lightbox-btn-next.gif',
+  imageBtnClose: 'static/jquery-lightbox-0.5/images/lightbox-btn-close.gif',
+  imageBlank: 'static/jquery-lightbox-0.5/images/lightbox-blank.gif',
+  txtImage: '',
+  txtOf: '/'
+});
+</script>
+</body>
+</html>
